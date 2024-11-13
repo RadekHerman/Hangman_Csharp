@@ -15,7 +15,7 @@ namespace Hangman_Csharp
                 string gameLanguage = ChooseGameLanguage();
                 string wordToGuess = SelectRandomWord(gameLanguage);
                 // making a set of characters (remove doubles) 
-                HashSet<char> wordLettersSet = makeSet(wordToGuess);
+                HashSet<char> wordLettersSet = MakeSet(wordToGuess);
 
                 Game game = new Game();
                 Thread.Sleep(1500);
@@ -24,7 +24,7 @@ namespace Hangman_Csharp
             }
         }
 
-        static HashSet<char> makeSet(string wordToGuess)
+        static HashSet<char> MakeSet(string wordToGuess)
         {
             char[] wordLetters = wordToGuess.ToCharArray();
             HashSet<char> wordLettersSet = new HashSet<char>();

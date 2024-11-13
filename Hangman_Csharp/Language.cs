@@ -16,17 +16,17 @@ namespace Hangman_Csharp
                 { "guess_letter", "\nPodaj literę: " },
                 { "guessed", "ODGADŁEŚ!!" },
                 { "already_taken", "Już wybierałeś tę literę, spróbuj jeszcze raz.\n" },
-                { "guesses", "Wybierane do tej pory: " },
+                { "guesses", "Wybierane litery do tej pory: " },
                 { "press_any", "\nNaciśnij ENTER klawisz aby kontynuować." },
                 { "not_guessed", "NIE ODGADŁEŚ!" },
-                { "only_one", "Podaj jedną literę" },
+                { "only_one", "Podaj tylko jedną literę" },
+                { "not_letter", "To nie litera!" },
                 { "end", "Koniec gry... odpowiedź:" },
                 { "congrat", "GRATULACJE!!!!" },
-                { "play_again", "Czy chcesz zagrać jeszcze raz? (t/n): " },
-                { "yes", "t" },
-                { "bye", "pa" }
+
             }
         },
+
         {
             "EN", new Dictionary<string, string>()
             {
@@ -41,15 +41,11 @@ namespace Hangman_Csharp
                 { "press_any", "\nPress ENTER to continue." },
                 { "not_guessed", "NOT GUESSED!!" },
                 { "only_one", "Only one letter please." },
+                { "not_letter", "That is not a letter!" },
                 { "end", "Game over... word: " },
                 { "congrat", "CONGRATULATIONS!!!!" },
-                { "play_again", "Do you want to play again? (y/n): " },
-                { "yes", "y" },
-                { "bye", "bye" }
             }
         }
-
         };
     }
-
 }

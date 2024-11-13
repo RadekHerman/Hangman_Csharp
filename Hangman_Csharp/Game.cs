@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 
 
 namespace Hangman_Csharp
 {
+    
     class Game
-    {
+    {    
         int lives = 7;
         readonly List<char> guessedLetters = new List<char>();
         readonly List<char> triedLetters = new List<char>();
@@ -29,7 +31,7 @@ namespace Hangman_Csharp
 
                 string guess = Console.ReadLine();
                 if ((!string.IsNullOrEmpty(guess)) && (guess.Trim().Length == 1))
-                {
+                {            
                     char guessChar = char.Parse(guess.ToUpper());
                     if (Char.IsLetter(guessChar))
                         {

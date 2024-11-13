@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,13 +11,15 @@ namespace Hangman_Csharp
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
             while (true)
             {
                 string gameLanguage = ChooseGameLanguage();
                 string wordToGuess = SelectRandomWord(gameLanguage);
                 // making a set of characters (remove doubles) 
                 HashSet<char> wordLettersSet = MakeSet(wordToGuess);
-
                 Game game = new Game();
                 Thread.Sleep(1500);
                 game.Play(gameLanguage, wordToGuess, wordLettersSet);

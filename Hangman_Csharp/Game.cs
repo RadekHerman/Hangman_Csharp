@@ -7,8 +7,8 @@ namespace Hangman_Csharp
     class Game
     {
         int lives = 7;
-        List<char> guessedLetters = new List<char>();
-        List<char> triedLetters = new List<char>();
+        readonly List<char> guessedLetters = new List<char>();
+        readonly List<char> triedLetters = new List<char>();
 
         public void Play(string gameLanguage, string wordToGuess, HashSet<char> wordLettersSet)
         {

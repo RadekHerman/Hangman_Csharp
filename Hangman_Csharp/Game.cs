@@ -31,32 +31,32 @@ namespace Hangman_Csharp
                 if ((!string.IsNullOrEmpty(guess)) && (guess.Trim().Length == 1))
                 {
                     char guessChar = char.Parse(guess.ToUpper());
-                    if (wordLettersSet.Contains(guessChar))
-                    {
-                        Console.WriteLine(Language.outputStrings[gameLanguage]["guessed"]);
-                        wordLettersSet.Remove(guessChar);
-                        guessedLetters.Add(guessChar);
-                        triedLetters.Add(guessChar);
-                    }
-                    else
-                    {
-                        Console.WriteLine(Language.outputStrings[gameLanguage]["not_guessed"]);
-                        lives--;
-                        if (!triedLetters.Contains(guessChar))
+                    if (Char.IsLetter(guessChar))
                         {
+                        if (wordLettersSet.Contains(guessChar))
+                        {
+                            Console.WriteLine(Language.outputStrings[gameLanguage]["guessed"]);
+                            wordLettersSet.Remove(guessChar);
+                            guessedLetters.Add(guessChar);
                             triedLetters.Add(guessChar);
                         }
                         else
                         {
-                            Console.WriteLine(Language.outputStrings[gameLanguage]["already_taken"]);
-                            Console.WriteLine(Language.outputStrings[gameLanguage]["guesses"]);
-
-                            foreach (char c in triedLetters)
+                            Console.WriteLine(Language.outputStrings[gameLanguage]["not_guessed"]);
+                            lives--;
+                            if (!triedLetters.Contains(guessChar))
                             {
-                                Console.Write(c + " ");
+                                triedLetters.Add(guessChar);
+                            }
+                            else
+                            {
+                                Console.WriteLine(Language.outputStrings[gameLanguage]["already_taken"]);
                             }
                         }
                     }
+
+                    else
+                        Console.WriteLine(Language.outputStrings[gameLanguage]["not_letter"]);
                 }
                 else
                 {

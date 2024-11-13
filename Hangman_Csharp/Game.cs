@@ -16,7 +16,13 @@ namespace Hangman_Csharp
             {
                 Console.Clear();
                 Console.WriteLine(Language.outputStrings[gameLanguage]["banner"]);
-                Console.WriteLine($"{Language.outputStrings[gameLanguage]["lives"]} {lives}");
+                Console.WriteLine($"{Language.outputStrings[gameLanguage]["lives"]} {lives}\n");
+                Console.WriteLine(Language.outputStrings[gameLanguage]["guesses"]);
+                foreach (char c in triedLetters)
+                {
+                    Console.Write(c + " ");
+                }
+                Console.WriteLine();
                 Console.WriteLine(Drawing.wisielec[lives]);
                 printWordToGuess(wordToGuess, guessedLetters);
                 Console.WriteLine(Language.outputStrings[gameLanguage]["guess_letter"]);

@@ -11,8 +11,12 @@ namespace Hangman_Csharp
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            
+            if (!System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("pl"))
+            {
+                Console.InputEncoding = System.Text.Encoding.UTF8;
+            }
 
             while (true)
             {
